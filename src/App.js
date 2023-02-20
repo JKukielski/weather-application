@@ -3,7 +3,7 @@ import "./App.css";
 import CurrentWeather from "./components/CurrentWeather";
 import Forecast from "./components/Forecast";
 import Search from "./components/Search";
-import { GEO_API_URL, WEATHER_API_KEY, WEATHER_API_URL } from "./api/api";
+// import { GEO_API_URL, WEATHER_API_KEY, WEATHER_API_URL } from "./api/api";
 import LocalWeather from "./components/LocalWeather";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       navigator.geolocation.getCurrentPosition(async function (position) {
         const { latitude, longitude } = position.coords;
         const weatherResponse = await fetch(
-          `${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
+          `${process.env.REACT_APP_WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
         );
         const weatherData = await weatherResponse.json();
         setLocalWeather(weatherData);
@@ -36,7 +36,7 @@ function App() {
 
     try {
       const locationFetch = await fetch(
-        `${GEO_API_URL}/direct?q=${location}&limit=1&appid=${WEATHER_API_KEY}`
+        `${process.env.REACT_APP_GEO_API_URL}/direct?q=${location}&limit=1&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
       );
 
       const locationJSON = await locationFetch.json();
@@ -45,13 +45,13 @@ function App() {
       const longitude = locationJSON[0].lon;
 
       const weatherFetch = await fetch(
-        `${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
+        `${process.env.REACT_APP_WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
       );
 
       const weatherJSON = await weatherFetch.json();
 
       const ForecastFetch = await fetch(
-        `${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
+        `${process.env.REACT_APP_WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
       );
 
       const forecastJSON = await ForecastFetch.json();
