@@ -1,78 +1,165 @@
-.current-weather {
+.current-weather-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: var(--primary-font);
+    margin-bottom: 10px;
+  }
+  
+  .outer-container {
+    width: 100%;
+  }
+
+  .outer-container:first-child {
+    margin-right: 5px;
+  }
+  
+  .outer-container:nth-child(2) {
+    margin-left: 5px;
+  }
+  
+  .current-local-container {
+    width: 100%;
+    max-width: 100%;
     background: rgb(194,192,192);
     background: linear-gradient(196deg, rgba(194,192,192,1) 0%, rgba(104,99,99,1) 0%, rgba(57,55,55,1) 23%, rgba(0,0,0,1) 81%);    border-radius: 10px;
-    width: 350px;
-    color: #fff;
-    font-family: var(--primary-font);
-    padding: 15px;
-    font-size: 14px;
-    margin: 10px;
-}
-
-.header{
-    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.city {
-    font-weight: 200;
-    font-size: 22px;
-}
-
-.image-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .city {
     font-weight: 200;
-}
-
-.weather-image {
-    margin-bottom: 10px;
-    width: 90px;
-}
-
-.info-container {
+  }
+  
+  .temp-icon-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 15px 0;
-    font-weight: 200;
-}
-
-.temperature {
-    font-size: 42px;
-    font-weight: 600;
-}
-
-.details-inner-container {
+    margin-bottom: 20px;
+  }
+  
+  .temp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    font-size: 54px;
+  }
+  
+  .icon {
+    padding-right: 20px;
+  }
+  
+  .temp-icon-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 110px;
-    margin: 5px 0;
-}
-
-.details-image{
-    width: 20px;    
-}
-
-.additional-info-container {
+    justify-content: center;
+  }
+  
+  .details-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+  }
+  
+  .details-inner-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .details-container-one, .details-container-two {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 30px;
     font-weight: 200;
-    font-size: 10px;
-}
+  }
+  
+  .details-icon {
+    width: 20px;
+    margin-right: 3px;
+  }
+  
+  .forecast {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .day {
+  
+  }
+  
+  @media screen and (max-width: 810px) {
 
-.current-weather-heading {
-    font-size: 16px;
-    font-weight: 300;
-    font-family: var(--primary-font);
-    margin: 0 10px;
-}
+    .temp-icon-container {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .details-container-one, .details-container-two {
+      padding: 0;
+    }
+  
+    .icon {
+      padding-right: 0;
+    }
+  }
+  
+  @media screen and (max-width: 711px) {
+    .current-weather-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .current-local-container {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+  
+    .temp-icon-container {
+      justify-content: center;
+    }
+  
+    .temp {
+      width: 50%;
+    }
+  
+    .details-container-one, .details-container-two {
+      align-items: center;
+    }
+
+    .outer-container:first-child {
+        margin-right: 0px;
+      }
+      
+      .outer-container:nth-child(2) {
+        margin-left: 0px;
+      }
+  }
+  
+  @media screen and (max-width: 426px) {
+    .container {
+      width: 98%;
+    }
+  
+    .details-container-one, .details-container-two {
+      align-items: flex-start;
+    }
+  }
+  
+  @media screen and (max-width: 321px) {
+    .details-container-one, .details-container-two {
+      font-size: 12px;
+    }
+  
+    .details-icon {
+      width: 18px;
+    }
+  }

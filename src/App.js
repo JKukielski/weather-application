@@ -3,7 +3,6 @@ import "./App.css";
 import CurrentWeather from "./components/CurrentWeather";
 import Forecast from "./components/Forecast";
 import Search from "./components/Search";
-// import { GEO_API_URL, WEATHER_API_KEY, WEATHER_API_URL } from "./api/api";
 import LocalWeather from "./components/LocalWeather";
 
 function App() {
@@ -65,32 +64,22 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={currentWeather ? { height: "100vh" } : { height: "100%" }}
+    >
       <Search
         handleLocationChange={handleLocationChange}
         handleSubmit={handleSubmit}
         location={location}
       />
-      <div className="inner-container">
-        <div className="current-weather-container">
-          <div className="small-inner-container">
-            <h1 className="current-weather-heading">
-              Current weather in your location:
-            </h1>
-            {localWeather && <LocalWeather localWeather={localWeather} />}
-          </div>
-          <div className="small-inner-container">
-            <h1 className="current-weather-heading">
-              {currentWeather && `Current weather in ${currentWeather.name}:`}
-            </h1>
-            {currentWeather && (
-              <CurrentWeather currentWeather={currentWeather} />
-            )}
-          </div>
-        </div>
-        <div className="forecast-container">
-          {forecast && <Forecast forecast={forecast} />}
-        </div>
+      <div className="current-weather-container">
+        {localWeather && <LocalWeather localWeather={localWeather} />}
+        {currentWeather && <CurrentWeather currentWeather={currentWeather} />}
+      </div>
+
+      <div className="forecast">
+        {forecast && <Forecast forecast={forecast} />}
       </div>
     </div>
   );

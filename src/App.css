@@ -5,13 +5,13 @@
 }
 
 .App {
-    padding-top: 40px;
+    padding: 40px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 100%;
     background: hsla(298, 68%, 90%, 1);
     background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
     background: -moz-linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
@@ -20,24 +20,24 @@
 
 .inner-container {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    flex-direction: row;
+    justify-content: center;
 }
 
 .current-weather-container {
     display: flex;
-    width: 30%;
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .forecast-container {
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 50px;
+    padding: 0 50px;
 }
 
 .small-inner-container {
@@ -45,4 +45,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 753px) {
+    .current-weather-container {
+        flex-direction: column;
+    }
 }

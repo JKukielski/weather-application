@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/currentWeather.css";
 
 const LocalWeather = ({ localWeather }) => {
   const localSunrise = localWeather.sys.sunrise;
@@ -8,53 +9,58 @@ const LocalWeather = ({ localWeather }) => {
   const localSunsetFormat = new Date(localSunset * 1000);
 
   return (
-    <div className="current-weather">
-      <div className="header">
-        <h1 className="city">{localWeather.name}</h1>
-      </div>
-      <div className="image-container">
-        <img
-          className="weather-image"
-          src={`icons/${localWeather.weather[0].icon}.png`}
-          alt=""
-        />
-        <p className="description">{localWeather.weather[0].main}</p>
-      </div>
-      <div className="info-container">
-        <p className="temperature">{Math.round(localWeather.main.temp)}°C</p>
+    <div className="outer-container">
+      <div className="current-local-container">
+        <h3 className="city">{localWeather.name}</h3>
+        <div className="temp-icon-container">
+          <h3 className="temp">{Math.round(localWeather.main.temp)}°C</h3>
+          <img
+            src={`icons/${localWeather.weather[0].icon}.png`}
+            alt=""
+            className="icon"
+          />
+        </div>
         <div className="details-container">
-          <div className="details-inner-container">
-            <img className="details-image" src="icons/wind.svg" alt="" />
-            <p className="wind">{Math.round(localWeather.wind.speed)} m/s</p>
+          <div className="details-container-one">
+            <div className="details-inner-container">
+              <img src="icons/wind.svg" alt="" className="details-icon" />
+              <p className="detail">
+                {Math.round(localWeather.wind.speed)} m/s
+              </p>
+            </div>
+            <div className="details-inner-container">
+              <img src="icons/pressure.svg" alt="" className="details-icon" />
+              <p className="detail">
+                {Math.round(localWeather.main.pressure)} hPa
+              </p>
+            </div>
+            <div className="details-inner-container">
+              <img src="icons/humidity.svg" alt="" className="details-icon" />
+              <p className="detail">
+                {Math.round(localWeather.main.humidity)}%
+              </p>
+            </div>
           </div>
-          <div className="details-inner-container">
-            <img className="details-image" src="icons/pressure.svg" alt="" />
-            <p className="pressure">{localWeather.main.pressure} hPa</p>
-          </div>
-          <div className="details-inner-container">
-            <img className="details-image" src="icons/humidity.svg" alt="" />
-            <p className="humidity">{localWeather.main.humidity}%</p>
+          <div className="details-container-two">
+            <p className="detail">
+              Feels like: {Math.round(localWeather.main.feels_like)}°C
+            </p>
+            <p className="detail">
+              Sunrise:{" "}
+              {localSunriseFormat.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </p>
+            <p className="detail">
+              Sunset:{" "}
+              {localSunsetFormat.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </p>
           </div>
         </div>
-      </div>
-      <div className="additional-info-container">
-        <p className="additional-temp">
-          Feels like: {Math.round(localWeather.main.feels_like)}°C
-        </p>
-        <p className="sunrise">
-          Sunrise:{" "}
-          {localSunriseFormat.toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </p>
-        <p className="sunset">
-          Sunset:{" "}
-          {localSunsetFormat.toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </p>
       </div>
     </div>
   );
