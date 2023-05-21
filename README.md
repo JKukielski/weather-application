@@ -1,70 +1,35 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Application
 
-## Available Scripts
+This is a weather application built using React. It allows you to view the current weather in your current location as well as search for the weather in any location worldwide. The application utilizes the OpenWeather API and Geolocation API to provide accurate and up-to-date weather information.
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- View the current weather in your current location.
+- Search for weather in any location worldwide.
+- Display the current weather conditions, including temperature, humidity, wind speed, and description.
+- Show a 7-day forecast for the searched location
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Follow these steps to run the Todo application locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the repository: git clone https://github.com/JKukielski/weather-application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigate to the project directory: ```cd weather-application```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install the dependencies: ```npm install```
 
-### `npm run eject`
+Start the application: ```npm start```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application will be running on ```http://localhost:3000.```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Once the application is running, you can view the current weather in your current location. The weather conditions will be displayed, including temperature, humidity, wind speed, and a brief description.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To search for weather in a specific location, enter the location in the search bar and press Enter or click the Search button. The application will retrieve the current weather and display it on the screen. Additionally, a 7-day forecast for the searched location will be shown, providing an overview of the weather in the coming days.
