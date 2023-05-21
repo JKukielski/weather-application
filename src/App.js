@@ -64,10 +64,7 @@ function App() {
   };
 
   return (
-    <div
-      className="App"
-      style={currentWeather ? { height: "100vh" } : { height: "100%" }}
-    >
+    <div className="App">
       <Search
         handleLocationChange={handleLocationChange}
         handleSubmit={handleSubmit}
